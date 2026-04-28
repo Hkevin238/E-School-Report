@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>E-School Login</title>
+<style>
+body{
+    font-family:Arial;
+    background:black;
+    color:#fff;
+    text-align:center;
+.card{background:black;padding:30px;border-radius:10px;max-width:300px;margin:auto}
+input{width:100%;padding:10px;margin:10px 0;border:none;border-radius:5px}
+button{padding:10px;width:70%;background:#22c55e;border:none;border-radius:15px;cursor:pointer}
+button:hover{
+  background: yellow;
+  color: black;
+  transition: 0.2s ease;
+}
+select{
+  border-radius: 18px;
+  width: 100px;
+  height: 30px;
+}
+select:hover{
+  background: black;
+  color: white;
+  transition: 0.2s ease;
+}
+input{
+  background-color: white;
+}
+input:hover{
+  background:gainsboro;
+  color: black;
+  transition: 0.2s ease;
+}
+p{
+  font-size: 18px;
+}
+p:hover{
+  color: red;
+  transition: 0.2s ease;
+}
+a:hover{
+  color:white;
+  transition: 0.2s ease;
+}
+u{
+  color: white;
+}
+u:hover{
+  transition: 0.3s ease;
+  background: black;
+  color: white;
+}
+</style>
+</head>
+<body style="background-image: url(B-logo.PNG);">
+<div class="card">
+<h2 class="move-right">Login As <select id="role">
+  <option value="admin">Choose User</option>
+<option value="admin">Admin</option>
+<option value="student">Student</option>
+<option value="parent">Parent</option>
+</select>
+</h2>
+<input type="text" id="user" placeholder="Username ex:mrkevin">
+<input type="password" id="pass" placeholder="Password ex:kml.1234">
+<button onclick="login()">🫴Login</button><b><em><br><br>Or
+  <p><em><u><button onclick='window.location.href="login.html"'> Don't have an Account ?</button></em></p>
+  </script>
+<script>
+function login(){
+ let u = document.getElementById('user').value;
+ let p = document.getElementById('pass').value;
+ let role = document.getElementById('role').value;
+
+ // simple demo validation
+ if(u && p){
+
+   localStorage.setItem("role", role);
+
+   if(role === "admin"){
+     window.location.href = "admindashboard.html";
+   }
+   else if(role === "student"){
+     window.location.href = "student.html";
+   }
+   else if(role === "parent"){
+     window.location.href = "parent.html";
+   }
+
+ }else{
+   alert("Please,Fill all fields");
+ }
+}
+</script>
+</body>
+</html>
